@@ -11,6 +11,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  devServer: {
+    static: path.resolve(__dirname, 'public')
+    // usar static, visto que contentBase nao está mais funcional desde webpack v5
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public', 'index.html')
